@@ -40,6 +40,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
       price: product.price,
       quantity: 1,
       image: product.image,
+      category: product.category,
     });
   };
 

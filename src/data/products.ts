@@ -223,7 +223,7 @@
      id: 'acc-4',
      name: 'Leather Belt',
      price: 4500,
-     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a25?w=500&q=80',
+     image: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500&q=80',
      category: 'accessories',
      description: 'Premium leather belt with signature buckle.',
      colors: ['Black', 'Brown', 'Pink'],
