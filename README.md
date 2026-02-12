@@ -1,8 +1,10 @@
 # Legacy Wear 👕
 
-![Legacy Wear Banner](./public/banner.png)
-
 A modern e-commerce platform for vintage and classic clothing, built with cutting-edge web technologies.
+
+## 🚀 Live Demo
+
+**[View Live Site →](https://legacy-wear.vercel.app/)**
 
 ## 🌟 Features
 
@@ -13,17 +15,19 @@ A modern e-commerce platform for vintage and classic clothing, built with cuttin
 - **Shopping Cart**: Add items and manage your purchases
 - **Product Search & Filtering**: Quickly find what you're looking for
 
-## 🚀 Live Demo
+## 📸 Preview
 
-Check out the live application: [https://legacy-wear.vercel.app/](https://legacy-wear.vercel.app/)
+> Visit the [live application](https://legacy-wear.vercel.app/) to see it in action!
 
-## 📸 Screenshots
+<!-- 
+To add screenshots:
+1. Take screenshots of your app
+2. Upload them to your repo in a /docs/screenshots/ folder
+3. Uncomment and update the paths below:
 
 ![Homepage](./docs/screenshots/homepage.png)
-*Homepage showcasing featured collections*
-
 ![Product Page](./docs/screenshots/product-page.png)
-*Detailed product view with descriptions and pricing*
+-->
 
 ## 🛠️ Built With
 
