@@ -1,73 +1,141 @@
-# React + TypeScript + Vite
+# Legacy Wear 👕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Legacy Wear Banner](./public/banner.png)
 
-Currently, two official plugins are available:
+A modern e-commerce platform for vintage and classic clothing, built with cutting-edge web technologies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## React Compiler
+- **Product Catalog**: Browse through a curated collection of vintage and classic wear
+- **Responsive Design**: Seamless experience across all devices
+- **Fast Performance**: Optimized for speed with modern web technologies
+- **User-Friendly Interface**: Clean and intuitive design for easy navigation
+- **Shopping Cart**: Add items and manage your purchases
+- **Product Search & Filtering**: Quickly find what you're looking for
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+Check out the live application: [https://legacy-wear.vercel.app/](https://legacy-wear.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Screenshots
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Homepage](./docs/screenshots/homepage.png)
+*Homepage showcasing featured collections*
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![Product Page](./docs/screenshots/product-page.png)
+*Detailed product view with descriptions and pricing*
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Built With
+
+- **Framework**: [Next.js](https://nextjs.org/) / React
+- **Styling**: Tailwind CSS / CSS Modules
+- **Deployment**: [Vercel](https://vercel.com/)
+- **Type Safety**: TypeScript (if applicable)
+
+## 📋 Prerequisites
+
+Before running this project locally, make sure you have:
+
+- Node.js (v16 or higher)
+- npm or yarn package manager
+
+## 🔧 Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/legacy-wear.git
+cd legacy-wear
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
 ```
+
+3. Run the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 📁 Project Structure
+
+```
+legacy-wear/
+├── public/          # Static assets
+├── src/
+│   ├── components/  # React components
+│   ├── pages/       # Next.js pages
+│   ├── styles/      # CSS/styling files
+│   └── utils/       # Utility functions
+├── package.json
+└── README.md
+```
+
+## 🎨 Key Components
+
+- **Product Card**: Displays individual product information
+- **Navigation Bar**: Easy site navigation
+- **Footer**: Links and company information
+- **Product Grid**: Responsive product layout
+- **Shopping Cart**: Cart management functionality
+
+## 🚀 Deployment
+
+This project is deployed on Vercel. To deploy your own instance:
+
+1. Push your code to GitHub
+2. Import your repository to Vercel
+3. Configure environment variables (if needed)
+4. Deploy!
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/legacy-wear)
+
+## 📝 Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+# Add your environment variables here
+NEXT_PUBLIC_API_URL=your_api_url
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Your Name**
+
+- Website: [https://legacy-wear.vercel.app/](https://legacy-wear.vercel.app/)
+- GitHub: [@yourusername](https://github.com/yourusername)
+
+## 🙏 Acknowledgments
+
+- Inspired by classic vintage clothing stores
+- Built with modern web development best practices
+- Deployed seamlessly on Vercel
+
+## 📞 Support
+
+For support, email your-email@example.com or open an issue in the repository.
+
+---
+
+⭐ Star this repository if you find it helpful!
