@@ -1,3 +1,4 @@
+// Shoes.tsx
 import { ShopPage } from './ShopPage';
 
 const Shoes = () => {
