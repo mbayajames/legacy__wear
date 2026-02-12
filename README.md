@@ -69,7 +69,28 @@ Here are some visual examples of modern fashion e-commerce designs similar to Le
 git clone https://github.com/your-username/legacy-wear.git
 cd legacy-wear
 
+
+Development
+npm run dev
+# Opens at http://localhost:3000
+
+
 # Install dependencies
 npm install
 # or
 yarn install
+
+Build & Deploy
+
+
+Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests for:
+
+New features (wishlist, search improvements)
+Bug fixes
+Styling enhancements
+Better mobile responsiveness
+
+License
+MIT License — feel free to use, modify, and distribute (add your preferred license if different).
+Made with 💙 in Nairobi — Legacy Wear © 2025+
