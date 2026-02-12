@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
 import { getFeaturedProducts } from '@/data/products';
 
-
 const categories = [
   {
     name: 'Shoes',
@@ -77,32 +76,32 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Hero Section – improved spacing & text scaling */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 hero-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
         </div>
 
-        {/* Animated Background Elements */}
+        {/* Animated blob – smaller on mobile */}
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
-          animate={{ 
+          className="absolute -top-10 -right-10 sm:top-1/4 sm:right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-primary/20 rounded-full blur-3xl"
+          animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 pt-20">
-          <div className="max-w-2xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 sm:pt-20 pb-12 sm:pb-0">
+          <div className="max-w-xl lg:max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary/20 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                 <Sparkles className="w-4 h-4" />
                 New Collection 2024
               </span>
@@ -112,10 +111,10 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6"
             >
               Elevate Your
-              <br />
+              <br className="sm:hidden" />
               <span className="text-gradient-pink">Style Legacy</span>
             </motion.h1>
 
@@ -123,26 +122,25 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-muted-foreground mb-8 max-w-lg"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-lg"
             >
-              Discover premium fashion that defines elegance. From stunning heels to 
-              statement accessories, find your perfect look.
+              Discover premium fashion that defines elegance. From stunning heels to statement accessories, find your perfect look.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col xs:flex-row gap-3 sm:gap-4"
             >
-              <Link to="/shoes">
-                <Button variant="hero" size="xl" className="gap-2">
+              <Link to="/shoes" className="w-full xs:w-auto">
+                <Button variant="hero" size="lg" className="w-full xs:w-auto gap-2">
                   Shop Now
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/about">
-                <Button variant="outline-light" size="xl">
+              <Link to="/about" className="w-full xs:w-auto">
+                <Button variant="outline-light" size="lg" className="w-full xs:w-auto">
                   Learn More
                 </Button>
               </Link>
@@ -150,9 +148,9 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator – hide on very small screens if needed */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 hidden xs:block"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -166,10 +164,10 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Features Bar */}
-      <section className="py-8 bg-card border-y border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Features Bar – tighter on mobile */}
+      <section className="py-10 sm:py-12 bg-card border-y border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -177,14 +175,14 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3 sm:gap-4 text-center sm:text-left"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground text-base sm:text-lg">{feature.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -192,24 +190,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
+      {/* Categories – better spacing & aspect ratio */}
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               Shop by <span className="text-gradient-pink">Category</span>
             </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-md sm:max-w-lg mx-auto">
               Explore our curated collections designed to elevate your wardrobe
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
@@ -219,18 +217,18 @@ const Index = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Link to={category.path} className="group block">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden">
                     <img
                       src={category.image}
                       alt={category.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 sm:group-hover:scale-110"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-xl font-bold text-foreground mb-1">{category.name}</h3>
-                      <p className="text-sm text-muted-foreground">{category.count}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                      <h3 className="text-base sm:text-xl font-bold text-foreground mb-0.5 sm:mb-1">{category.name}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{category.count}</p>
                     </div>
-                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-2xl transition-colors duration-300" />
                   </div>
                 </Link>
               </motion.div>
@@ -239,30 +237,30 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto px-4">
+      {/* Featured Products – same grid logic */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12"
+            className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 sm:mb-12"
           >
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            <div className="text-center sm:text-left">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">
                 Featured <span className="text-gradient-pink">Collection</span>
               </h2>
-              <p className="text-muted-foreground">Handpicked pieces for your style</p>
+              <p className="text-sm sm:text-base text-muted-foreground">Handpicked pieces for your style</p>
             </div>
             <Link to="/shoes">
-              <Button variant="outline-light" className="gap-2">
+              <Button variant="outline-light" className="gap-2 text-sm sm:text-base">
                 View All
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
@@ -270,31 +268,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Sale Banner */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Sale Banner – better mobile readability */}
+      <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-background to-pink-glow/20" />
         <motion.div
-          className="absolute -top-20 -right-20 w-80 h-80 bg-primary/30 rounded-full blur-3xl"
+          className="absolute -top-16 -right-16 sm:-top-20 sm:-right-20 w-64 h-64 sm:w-80 sm:h-80 bg-primary/30 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 6, repeat: Infinity }}
         />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-xl sm:max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary font-semibold text-lg">Limited Time Offer</span>
-              <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
+              <span className="text-primary font-semibold text-base sm:text-lg">Limited Time Offer</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-3 sm:mt-4 mb-4 sm:mb-6">
                 Pink Friday <span className="text-gradient-pink">Sale</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8">
                 Get up to 30% off on selected items. Don't miss out!
               </p>
-              <Link to="/clothes">
-                <Button variant="hero" size="xl" className="gap-2">
+              <Link to="/clothes" className="inline-block">
+                <Button variant="hero" size="xl" className="gap-2 text-base sm:text-lg px-6 sm:px-8">
                   Shop the Sale
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -304,22 +302,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
+      {/* Testimonials – stack better on mobile */}
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               What Our <span className="text-gradient-pink">Customers Say</span>
             </h2>
-            <p className="text-muted-foreground">Join thousands of satisfied fashion lovers</p>
+            <p className="text-sm sm:text-base text-muted-foreground">Join thousands of satisfied fashion lovers</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
@@ -327,21 +325,22 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border"
+                className="bg-card rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-border text-center sm:text-left"
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex justify-center sm:justify-start gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-gold text-gold" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">"{testimonial.text}"</p>
+                <div className="flex items-center justify-center sm:justify-start gap-3">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
+                    loading="lazy"
                   />
-                  <span className="font-medium text-foreground">{testimonial.name}</span>
+                  <span className="font-medium text-foreground text-sm sm:text-base">{testimonial.name}</span>
                 </div>
               </motion.div>
             ))}
@@ -349,23 +348,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto px-4">
+      {/* CTA – simpler & centered */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               Ready to <span className="text-gradient-pink">Upgrade</span> Your Style?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">
               Join the Legacy Wear family and discover fashion that speaks to you.
             </p>
             <Link to="/shoes">
-              <Button variant="hero" size="xl" className="gap-2">
+              <Button variant="hero" size="xl" className="gap-2 px-6 sm:px-8">
                 Start Shopping
                 <ArrowRight className="w-5 h-5" />
               </Button>
